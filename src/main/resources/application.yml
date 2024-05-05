@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: schedlock-demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  flyway:
+    enabled: true
+server:
+  port: 8081

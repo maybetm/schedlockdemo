@@ -1,0 +1,14 @@
+version: "3.5"
+
+services:
+  db:
+    image: postgres:16
+    command: postgres -c max_connections=100 -c log_directory='pg_log' -c log_statement='all' -c logging_collector=on
+    container_name: schedlock-demo-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
